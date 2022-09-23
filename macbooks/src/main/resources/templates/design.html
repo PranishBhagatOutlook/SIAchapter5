@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Macbook Store</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+  
+  <body>
+    <h1>Design your macbook!</h1>
+    <h2>Feelin' rich, <span th:text="${user.fullname}">NAME</span>?</h2>
+    <img th:src="@{/images/img.png}"/>
+    
+    <form method="POST" th:action="@{/logout}" id="logoutForm">
+      <input type="submit" value="Logout"/>
+    </form>
+        
+    <form th:method="POST" th:object="${design}" th:action="@{/design}" id="macbookForm">
+
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ingredients')}" 
+          th:errors="*{ingredients}">Ingredient Error</span>
+
+    <div class="grid">
+      <div class="ingredient-group" id="screen">
+      <h3>Designate your screen:</h3>
+      <div th:each="ingredient : ${screen}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+
+	  <div class="ingredient-group" id="charger">
+      <h3>Pick your charger:</h3>
+      <div th:each="ingredient : ${charger}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+  
+	  <div class="ingredient-group" id="ram">
+      <h3>Choose your ram:</h3>
+      <div th:each="ingredient : ${ram}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+        
+	  <div class="ingredient-group" id="mouse">
+      <h3>Determine your mouse:</h3>
+      <div th:each="ingredient : ${mouse}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      
+	  <div class="ingredient-group" id="keyboard">
+      <h3>Select your keyboard:</h3>
+      <div th:each="ingredient : ${keyboard}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      </div>
+      
+      <div>
+
+
+      <h3>Name your macbook creation:</h3>
+      <input type="text" th:field="*{name}"/>
+      <span class="validationError"
+            th:if="${#fields.hasErrors('name')}" 
+            th:errors="*{name}">Name Error</span>
+      <br/>
+      
+      <button>Submit your macbook</button>
+      </div>
+    </form>
+  </body>
+</html>
