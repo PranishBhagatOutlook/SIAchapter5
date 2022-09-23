@@ -1,4 +1,4 @@
-package tacos.web;
+package macbooks.web;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -18,14 +18,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lombok.extern.slf4j.Slf4j;
-import tacos.Ingredient;
-import tacos.Ingredient.Type;
-import tacos.Order;
-import tacos.Macbook;
-import tacos.User;
-import tacos.data.IngredientRepository;
-import tacos.data.MacbookRepository;
-import tacos.data.UserRepository;
+import macbooks.Ingredient;
+import macbooks.Ingredient.Type;
+import macbooks.Order;
+import macbooks.Macbook;
+import macbooks.User;
+import macbooks.data.IngredientRepository;
+import macbooks.data.MacbookRepository;
+import macbooks.data.UserRepository;
 
 @Controller
 @RequestMapping("/design")

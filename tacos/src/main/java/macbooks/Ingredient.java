@@ -1,4 +1,4 @@
-package tacos;
+package macbooks;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

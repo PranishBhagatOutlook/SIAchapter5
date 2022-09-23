@@ -1,4 +1,4 @@
-package tacos;
+package macbooks;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -15,10 +15,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import tacos.data.IngredientRepository;
-import tacos.data.OrderRepository;
-import tacos.data.MacbookRepository;
-import tacos.data.UserRepository;
+import macbooks.data.IngredientRepository;
+import macbooks.data.OrderRepository;
+import macbooks.data.MacbookRepository;
+import macbooks.data.UserRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(secure=false)

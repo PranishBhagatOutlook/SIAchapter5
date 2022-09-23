@@ -1,7 +1,7 @@
-package tacos.security;
+package macbooks.security;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import lombok.Data;
-import tacos.User;
+import macbooks.User;
 
 @Data
 public class RegistrationForm {

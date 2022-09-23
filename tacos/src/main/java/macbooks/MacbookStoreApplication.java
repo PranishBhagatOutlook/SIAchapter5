@@ -1,19 +1,18 @@
-package tacos;
+package macbooks;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import tacos.Ingredient.Type;
-import tacos.data.IngredientRepository;
-import tacos.data.UserRepository;
+import macbooks.Ingredient.Type;
+import macbooks.data.IngredientRepository;
 
 @SpringBootApplication
-public class TacoCloudApplication {
+public class MacbookStoreApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(TacoCloudApplication.class, args);
+    SpringApplication.run(MacbookStoreApplication.class, args);
   }
 
   @Bean

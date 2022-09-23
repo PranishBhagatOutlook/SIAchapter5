@@ -1,8 +1,8 @@
-package tacos.data;
+package macbooks.data;
 
 import org.springframework.data.repository.CrudRepository;
 
-import tacos.Ingredient;
+import macbooks.Ingredient;
 
 public interface IngredientRepository 
          extends CrudRepository<Ingredient, String> {

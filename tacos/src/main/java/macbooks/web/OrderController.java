@@ -1,4 +1,4 @@
-package tacos.web;
+package macbooks.web;
 import javax.validation.Valid;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import tacos.Order;
-import tacos.User;
-import tacos.data.OrderRepository;
+import macbooks.Order;
+import macbooks.User;
+import macbooks.data.OrderRepository;
 
 @Controller
 @RequestMapping("/orders")

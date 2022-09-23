@@ -1,8 +1,8 @@
-package tacos.data;
+package macbooks.data;
 
 import org.springframework.data.repository.CrudRepository;
 
-import tacos.Order;
+import macbooks.Order;
 
 public interface OrderRepository 
          extends CrudRepository<Order, Long> {

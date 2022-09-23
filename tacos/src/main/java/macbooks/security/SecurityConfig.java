@@ -1,5 +1,5 @@
 //tag::securityConfigOuterClass[]
-package tacos.security;
+package macbooks.security;
 
 import org.springframework.context.annotation.Bean;
 //end::securityConfigOuterClass[]

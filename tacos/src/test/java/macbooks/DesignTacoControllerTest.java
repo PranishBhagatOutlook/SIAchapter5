@@ -1,4 +1,4 @@
-package tacos;
+package macbooks;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -23,12 +23,12 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import tacos.Ingredient.Type;
-import tacos.data.IngredientRepository;
-import tacos.data.OrderRepository;
-import tacos.data.MacbookRepository;
-import tacos.data.UserRepository;
-import tacos.web.DesignMacbookController;
+import macbooks.Ingredient.Type;
+import macbooks.data.IngredientRepository;
+import macbooks.data.OrderRepository;
+import macbooks.data.MacbookRepository;
+import macbooks.data.UserRepository;
+import macbooks.web.DesignMacbookController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(DesignMacbookController.class)
