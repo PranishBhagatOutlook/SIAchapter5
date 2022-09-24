@@ -71,31 +71,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .headers()
           .frameOptions()
             .sameOrigin()
-      // end::frameOptionsSameOrigin[]
-            
-      //tag::authorizeRequests[]
-      //tag::customLoginPage[]
+
       ;
   }
-//end::configureHttpSecurity[]
-//end::authorizeRequests[]
-//end::customLoginPage[]
 
-  /*
-  //tag::customUserDetailsService[]
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-
-    auth
-      .userDetailsService(userDetailsService);
-    
-  }
-  //end::customUserDetailsService[]
-  
-   */
-
-  //tag::customUserDetailsService_withPasswordEncoder[]
   @Bean
   public PasswordEncoder encoder() {
     return new StandardPasswordEncoder("53cr3t");
@@ -111,110 +90,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .passwordEncoder(encoder());
     
   }
-  //end::customUserDetailsService_withPasswordEncoder[]
-  
-//
-// IN MEMORY AUTHENTICATION EXAMPLE
-//
-/*
-//tag::configureAuthentication_inMemory[]
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-    
-    auth
-      .inMemoryAuthentication()
-        .withUser("buzz")
-          .password("infinity")
-          .authorities("ROLE_USER")
-        .and()
-        .withUser("woody")
-          .password("bullseye")
-          .authorities("ROLE_USER");
-    
-  }
-//end::configureAuthentication_inMemory[]
-*/
-
-//
-// JDBC Authentication example
-//
-/*
-//tag::configureAuthentication_jdbc[]
-  @Autowired
-  DataSource dataSource;
-  
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-    
-    auth
-      .jdbcAuthentication()
-        .dataSource(dataSource);
-    
-  }
-//end::configureAuthentication_jdbc[]
-*/
-
-/*
-//tag::configureAuthentication_jdbc_withQueries[]
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-    
-    auth
-      .jdbcAuthentication()
-        .dataSource(dataSource)
-        .usersByUsernameQuery(
-            "select username, password, enabled from Users " +
-            "where username=?")
-        .authoritiesByUsernameQuery(
-            "select username, authority from UserAuthorities " +
-            "where username=?");
-    
-  }
-//end::configureAuthentication_jdbc_withQueries[]
-*/
-
-/*
-//tag::configureAuthentication_jdbc_passwordEncoder[]
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-    
-    auth
-      .jdbcAuthentication()
-        .dataSource(dataSource)
-        .usersByUsernameQuery(
-            "select username, password, enabled from Users " +
-            "where username=?")
-        .authoritiesByUsernameQuery(
-            "select username, authority from UserAuthorities " +
-            "where username=?")
-        .passwordEncoder(new StandardPasswordEncoder("53cr3t");
-    
-  }
-//end::configureAuthentication_jdbc_passwordEncoder[]
-*/
-  
-  
-//
-// LDAP Authentication example
-//
-/*
-//tag::configureAuthentication_ldap[]
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth)
-      throws Exception {
-    auth
-      .ldapAuthentication()
-        .userSearchFilter("(uid={0})")
-        .groupSearchFilter("member={0}");
-  }
-//end::configureAuthentication_ldap[]
-*/
-  
-//tag::securityConfigOuterClass[]
-
 }
-//end::securityConfigOuterClass[]
+
