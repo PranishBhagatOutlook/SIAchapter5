@@ -1,21 +1,23 @@
-server:
-  port: 8080
-
 spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:h2:mem:mydb
-    username: test
-    password: test
+    url: jdbc:h2:mem:dev
+    username: dev
+    password:
     driverClassName: org.h2.Driver
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-macbook:
-  orders:
-    pageSize: 5
-
-
 
 
 ---
+spring:
+  profiles:
+    active: prod
+  datasource:
+    url: jdbc:h2:mem:prod
+    username: prod
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect

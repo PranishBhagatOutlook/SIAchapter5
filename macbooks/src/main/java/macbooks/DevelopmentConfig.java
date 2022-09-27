@@ -34,7 +34,7 @@ public class DevelopmentConfig {
                 repo.save(new Ingredient("08GR", "8 GB", Type.RAM));
                 repo.save(new Ingredient("16GR", "16 GB", Type.RAM));
 
-                userRepo.save(new User("activenotprod", encoder.encode("activenotprod"),
+                userRepo.save(new User("dev", encoder.encode("dev"),
                         "Pranish Bhagat", "1825 S 3rd street", "Waco", "TX",
                         "76706", "650-695-2538"));
             }
